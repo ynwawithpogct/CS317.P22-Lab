@@ -1,0 +1,6 @@
+huggingface_hub
+numpy
+scikit-learn
+torch
+torchvision
+mlflow
