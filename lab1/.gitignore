@@ -16,6 +16,7 @@ data/
 
 # Save
 save/
+temp/
 
 # MLflow logs
 mlruns/
