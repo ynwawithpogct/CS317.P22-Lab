@@ -16,3 +16,6 @@ data/
 
 # Save
 save/
+
+# MLflow logs
+mlruns/
