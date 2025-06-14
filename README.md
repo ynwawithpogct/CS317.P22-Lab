@@ -41,8 +41,9 @@ Code:
             │   ├── model.py <- get_model (resnet50/convnext_tiny)
             │   ├── train.py <- train
             │   ├── evaluate.py <- evaluate
-            │   ├── mlruns/ (MLflow logs)
+            │   ├── mlruns/ (MLflow logs) (git ignore)
             │   ├── main.py
             │   ├── requirements.txt
             │   └── Dockerfile
+            │   └── .gitignore
         </pre>
