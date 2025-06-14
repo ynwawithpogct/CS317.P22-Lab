@@ -27,14 +27,22 @@ Code:
         <pre lang="markdown"> 
             # Directory structure
             ├── lab1
-            │   ├── data/
-            │   │   └── raw/
-            │   ├── model/
-            │   ├── src/
-            │   │   └── preprocess.py
-            │   │   └── train.py
-            │   │   └── evaluate.py
+            │   ├── download_data.py
+            │   ├── data/ (git ignore)
+            │   │   └── dataset/
+            │   ├── save/ (git ignore)
+            │   │   └── model_weights.pth
+            │   │   └── evaluate.pkl
+            │   ├── data_processing/
+            │   │   └── get_dataloader.py
+            │   │   └── transforms.py
+            │   │   └── __init__.py <- get_dataloader
+            │   ├── set_seed.py <- set_seed
+            │   ├── model.py <- get_model (resnet50/convnext_tiny)
+            │   ├── train.py <- train
+            │   ├── evaluate.py <- evaluate
             │   ├── mlruns/ (MLflow logs)
+            │   ├── main.py
             │   ├── requirements.txt
             │   └── Dockerfile
         </pre>
