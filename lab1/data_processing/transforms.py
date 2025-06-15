@@ -99,11 +99,11 @@ def get_transform(transform_list=None):
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
         ])
     else:
-        transforms =  [
+        transforms_Compose =  [
             TensorToSquare(),
             transforms.Resize((224,224)),
             transforms.ToTensor(),
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
         ]
-        transforms[3:3] =  [transform_dict[t] for t in transform_list]
-        return transforms.Compose(transforms)
+        transforms_Compose[3:3] =  [transform_dict[t] for t in transform_list]
+        return transforms.Compose(transforms_Compose)

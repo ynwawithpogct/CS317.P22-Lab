@@ -4,6 +4,7 @@ import mlflow
 import mlflow.pytorch
 from sklearn.metrics import f1_score
 import copy
+from tqdm import tqdm
 
 
 def train(
@@ -48,7 +49,7 @@ def train(
                 criterion = nn.CrossEntropyLoss()
                 optimizer = torch.optim.SGD(temp_model.parameters(), lr=learning_rate, weight_decay = weight_decay, momentum = momentum) 
     
-                for epoch in range(num_epochs):
+                for epoch in tqdm(range(num_epochs), desc=f"Training Fold-{fold}"):
                     temp_model.train()
                     all_preds, all_labels = [], []
                     train_loss = 0
@@ -149,7 +150,7 @@ def train(
             criterion = nn.CrossEntropyLoss()
             optimizer = torch.optim.SGD(temp_model.parameters(), lr=learning_rate, weight_decay = weight_decay, momentum = momentum) 
 
-            for epoch in range(num_epochs):
+            for epoch in tqdm(range(num_epochs), desc="Training Split"):
                 temp_model.train()
                 all_preds, all_labels = [], []
                 train_loss = 0

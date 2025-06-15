@@ -4,7 +4,7 @@ import torch.nn as nn
 
 def get_model(model_name, num_class=10):
     if model_name == 'resnet50':
-        resnet = models.resnet50(pretrained=True)
+        resnet = models.resnet50(weights=models.ResNet50_Weights.DEFAULT)
 
         for name, param in resnet.named_parameters():
             if "layer4" not in name and "fc" not in name:
